@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 
 const val MAX_UNITS = 7            // days per booking: 1..7
 const val MAX_BOOKING_COST = 400   // credits per booking
-const val START_CREDITS = 1000
+const val START_CREDITS = 500
 
 /** One item that can be hired: a keg or a piece of keg equipment. */
 data class Resource(
