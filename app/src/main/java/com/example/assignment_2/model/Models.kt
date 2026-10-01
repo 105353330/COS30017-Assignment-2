@@ -21,3 +21,25 @@ data class Resource(
     @DrawableRes val imageRes: Int,
     val isAvailable: Boolean = true    // false once booked; true again if cancelled
 )
+
+enum class BookingStatus { ACTIVE, CANCELLED }
+
+/** One confirmed hire of one item. Stays in history even after it is cancelled. */
+data class Booking(
+    val id: Int,
+    val resourceId: Int,           // which item was booked
+    val resourceName: String,
+    val units: Int,                // days hired
+    val totalCost: Int,
+    val guestName: String,
+    val status: BookingStatus = BookingStatus.ACTIVE
+)
+
+// An enum keeps the sort choices to a fixed list, so an invalid sort can't be picked.
+// Each choice carries the label shown in the Browse sort menu.
+enum class SortOption(val label: String) {
+    NONE("None"),
+    RATING("Rating (high to low)"),
+    YEAR("Year (newest first)"),
+    PRICE("Price (low to high)")
+}
