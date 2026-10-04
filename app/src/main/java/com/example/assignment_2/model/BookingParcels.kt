@@ -21,7 +21,7 @@ data class BookingItem(
 data class BookingRequest(
     val items: List<BookingItem>,
     val totalCost: Int,
-    val credits: Int,              // balance at the time of booking
+    val credits: Int,              // balance in dollars at the time of booking
 ) : Parcelable
 
 /** Sent back from BookingActivity to MainActivity when the user taps Confirm. */

@@ -11,8 +11,8 @@ fun validateBooking(items: List<BookingItem>, credits: Int): List<String> {
         }
     }
     val total = items.sumOf { it.cost }
-    if (total > MAX_BOOKING_COST) errors += "Total $total exceeds the $MAX_BOOKING_COST credit limit."
-    if (total > credits) errors += "Total $total exceeds your balance of $credits."
+    if (total > MAX_BOOKING_COST) errors += "Total \$$total exceeds the \$$MAX_BOOKING_COST limit."
+    if (total > credits) errors += "Total \$$total exceeds your balance of \$$credits."
     return errors
 }
 
