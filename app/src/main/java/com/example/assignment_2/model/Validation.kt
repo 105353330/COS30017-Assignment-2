@@ -15,3 +15,7 @@ fun validateBooking(items: List<BookingItem>, credits: Int): List<String> {
     if (total > credits) errors += "Total $total exceeds your balance of $credits."
     return errors
 }
+
+/** Returns an error message if the name is blank, or null if the name is fine. */
+fun validateName(name: String): String? =
+    if (name.isBlank()) "Name is required." else null
